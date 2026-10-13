@@ -36,7 +36,7 @@ using namespace sdbusplus::xyz::openbmc_project::Logging::server;
  * @param bus D-Bus bus object
  * @param devicePath path to the UPS device
  */
-void logBatteryDischarging(sdbusplus::bus::bus& bus,
+void logBatteryDischarging(sdbusplus::bus_t& bus,
                            const std::string& devicePath);
 
 /**
@@ -45,7 +45,7 @@ void logBatteryDischarging(sdbusplus::bus::bus& bus,
  * @param bus D-Bus bus object
  * @param devicePath path to the UPS device
  */
-void logBatteryLow(sdbusplus::bus::bus& bus, const std::string& devicePath);
+void logBatteryLow(sdbusplus::bus_t& bus, const std::string& devicePath);
 
 /**
  * Log an error using the D-Bus Create method.
@@ -58,7 +58,7 @@ void logBatteryLow(sdbusplus::bus::bus& bus, const std::string& devicePath);
  * @param severity Severity property of the error log entry
  * @param additionalData AdditionalData property of the error log entry
  */
-void logError(sdbusplus::bus::bus& bus, const std::string& message,
+void logError(sdbusplus::bus_t& bus, const std::string& message,
               Entry::Level severity,
               std::map<std::string, std::string>& additionalData);
 

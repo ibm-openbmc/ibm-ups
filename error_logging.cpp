@@ -28,8 +28,7 @@
 namespace ibm_ups::error_logging
 {
 
-void logBatteryDischarging(sdbusplus::bus::bus& bus,
-                           const std::string& devicePath)
+void logBatteryDischarging(sdbusplus::bus_t& bus, const std::string& devicePath)
 {
     std::string message{
         "xyz.openbmc_project.Power.UPS.Error.Battery.Discharging"};
@@ -38,7 +37,7 @@ void logBatteryDischarging(sdbusplus::bus::bus& bus,
     logError(bus, message, Entry::Level::Informational, additionalData);
 }
 
-void logBatteryLow(sdbusplus::bus::bus& bus, const std::string& devicePath)
+void logBatteryLow(sdbusplus::bus_t& bus, const std::string& devicePath)
 {
     std::string message{"xyz.openbmc_project.Power.UPS.Error.Battery.Low"};
     std::map<std::string, std::string> additionalData{};
@@ -46,7 +45,7 @@ void logBatteryLow(sdbusplus::bus::bus& bus, const std::string& devicePath)
     logError(bus, message, Entry::Level::Informational, additionalData);
 }
 
-void logError(sdbusplus::bus::bus& bus, const std::string& message,
+void logError(sdbusplus::bus_t& bus, const std::string& message,
               Entry::Level severity,
               std::map<std::string, std::string>& additionalData)
 {

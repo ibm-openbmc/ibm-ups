@@ -26,7 +26,7 @@ namespace ibm_ups
  */
 constexpr auto rootObjectPath = "/org/freedesktop/UPower";
 
-Monitor::Monitor(sdbusplus::bus::bus& bus, const sdeventplus::Event& event) :
+Monitor::Monitor(sdbusplus::bus_t& bus, const sdeventplus::Event& event) :
     bus{bus}, eventLoop{event}, manager{bus, rootObjectPath}, ups{bus},
     timer{event, std::bind(&Monitor::timerExpired, this)}
 {

@@ -63,7 +63,7 @@ class UPS : public DeviceObject
      *
      * @param bus D-Bus bus object
      */
-    explicit UPS(sdbusplus::bus::bus& bus);
+    explicit UPS(sdbusplus::bus_t& bus);
 
     /**
      * Destructor.
@@ -236,7 +236,7 @@ class UPS : public DeviceObject
     /**
      * D-Bus bus object.
      */
-    sdbusplus::bus::bus& bus;
+    sdbusplus::bus_t& bus;
 
     /**
      * File system path to the UPS device.

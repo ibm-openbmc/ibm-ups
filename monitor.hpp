@@ -54,7 +54,7 @@ class Monitor
      * @param bus D-Bus bus object
      * @param event event object
      */
-    explicit Monitor(sdbusplus::bus::bus& bus, const sdeventplus::Event& event);
+    explicit Monitor(sdbusplus::bus_t& bus, const sdeventplus::Event& event);
 
     /**
      * Disables monitoring of the UPS device.
@@ -110,7 +110,7 @@ class Monitor
     /**
      * D-Bus bus object.
      */
-    sdbusplus::bus::bus& bus;
+    sdbusplus::bus_t& bus;
 
     /**
      * Event object to loop on.
